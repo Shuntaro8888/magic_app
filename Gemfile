@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.8"
+ruby "~>3.2", ">= 3.2.8"
 
 gem "rails",           "7.0.4.3"
+gem "bootstrap-sass",  "3.4.1"
 gem "sassc-rails",     "2.1.2"
 gem "sprockets-rails", "3.4.2"
 gem "importmap-rails", "1.1.5"
@@ -24,7 +25,7 @@ group :development do
   gem "web-console",         "4.2.0"
   gem "solargraph",          "0.53.4"
   gem "irb",                 "1.10.0"
-  gem "repl_type_completor", "0.1.2"
+  # gem "repl_type_completor", "0.1.2"
 end
 
 group :test do
@@ -39,4 +40,8 @@ group :test do
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
-# gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+# gem 'prism', '>=0.19.0'
+gem 'mutex_m'
+gem 'bigdecimal'
+gem 'drb'
