@@ -17,7 +17,8 @@ gem "sqlite3",         "1.6.1"
 gem "concurrent-ruby", "1.3.4"
 
 group :development, :test do
-  gem 'reline', '0.5.10'
+  # gem 'reline', '0.5.10'
+  gem 'reline', '0.4.0'
   gem "debug",   "1.7.1", platforms: %i[ mri mingw x64_mingw ]
 end
 
@@ -25,7 +26,7 @@ group :development do
   gem "web-console",         "4.2.0"
   gem "solargraph",          "0.53.4"
   gem "irb",                 "1.10.0"
-  # gem "repl_type_completor", "0.1.2"
+  gem "repl_type_completor", "0.1.9"
 end
 
 group :test do
@@ -45,3 +46,4 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'mutex_m'
 gem 'bigdecimal'
 gem 'drb'
+gem 'fiddle'
