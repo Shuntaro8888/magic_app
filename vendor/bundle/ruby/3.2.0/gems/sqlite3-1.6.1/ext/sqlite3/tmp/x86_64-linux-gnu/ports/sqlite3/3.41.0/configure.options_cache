@@ -1,0 +1,1 @@
+["--host=x86_64-linux-gnu", "--enable-static", "--disable-shared", "--enable-shared=no", "--enable-static=yes", "CC=x86_64-linux-gnu-gcc", "CFLAGS=-fPIC -O2 -fvisibility=hidden", "--prefix=/mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ports/x86_64-linux-gnu/sqlite3/3.41.0"]
