@@ -1,0 +1,6 @@
+lib/crass.rb b792f373be7905fc1b60ce85a9631c65160f59cb
+lib/crass/parser.rb 7c9c5d4e418417767b05c9bb56b533c5c2cbfe6f
+lib/crass/scanner.rb 313433fd33bfff6a8e5dfed44a08f431d90d9ec9
+lib/crass/version.rb b5fe521c771fdd05aabf375d72f9dedebe5cfca2
+lib/crass/tokenizer.rb df2c39a987c91079b15e993d03481d1f1757ab8a
+lib/crass/token-scanner.rb 04c6cd0fb059b069e2c4cc626e19b66deae1d4a1

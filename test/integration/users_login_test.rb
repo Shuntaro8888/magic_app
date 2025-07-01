@@ -66,4 +66,26 @@ class LogoutTest < Logout
     assert_select "a[href=?]", logout_path, count: 0 # Logout link should not be present
     assert_select "a[href=?]", user_path(@user), count: 0 # User profile link should not be present
   end
+
+  test "should still work after logout in second window" do
+    delete logout_path
+    assert_redirected_to root_url
+  end
+end
+
+class RememberingTest < UsersLoginTest
+
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1') # Log in with the remember me option checked
+    assert_equal cookies[:remember_token], assigns(:user).remember_token # Check if the remember token cookie is set
+  end
+
+  test "login without remembering" do
+    # Log in with the remember me option checked
+    log_in_as(@user, remember_me: '1')
+    # Log in again without the remember me option
+    log_in_as(@user, remember_me: '0') # Log in without the remember me option
+    assert cookies[:remember_token].blank? # Ensure the remember token cookie is not set
+  end
+  
 end

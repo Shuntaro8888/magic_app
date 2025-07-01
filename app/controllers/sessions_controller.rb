@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user&.authenticate(params[:session][:password])
+    @user = User.find_by(email: params[:session][:email].downcase)
+    if @user&.authenticate(params[:session][:password])
       # Log the user in and redirect to their profile page
       reset_session # Clear any existing session data ログインの直前に書く（セッション固定対策）
-      log_in user
-      redirect_to user
+      params[:session][:remember_me] == '1' ? remember(@user) : forget(@user) # Remember the user if the checkbox is checked 三項演算子
+      log_in @user
+      redirect_to @user
     else
       # Create an error message and re-render the signin form
       flash.now[:danger] = 'Invalid email/password combination'
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in? # Ensure the user is logged out before redirecting
     redirect_to root_url, status: :see_other
   end
 

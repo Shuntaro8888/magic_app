@@ -1,0 +1,6 @@
+lib/marcel.rb 89321edd4ca7eac79283b0b6a24cf7e6fa126c3a
+lib/marcel/magic.rb a6d77d691541a50b35a657487ea79becb8c2f3fd
+lib/marcel/tables.rb 60d4b28d2cb8dc0ed683cd004f77a85eda63d99d
+lib/marcel/version.rb 1eedcc4cd9518499f7c3a41b9c21deb3e26d2c06
+lib/marcel/mime_type.rb 70e818fbe73872b38c175e8a90b6cb8f50d29c6d
+lib/marcel/mime_type/definitions.rb b4f9104ef3c69fd41939195bba6a338a470d1035
