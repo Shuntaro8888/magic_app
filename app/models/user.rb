@@ -33,14 +33,25 @@ class User < ApplicationRecord
   end
 
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
-    return false if remember_digest.nil? # Return false if remember_digest is nil
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil? # Return false if digest is nil
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   # This method clears the remember_digest attribute, effectively logging out the user.
   def forget
     update(remember_digest: nil)
+  end
+
+  # アカウントを有効にする
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  # 有効化用のメールを送信する
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   private

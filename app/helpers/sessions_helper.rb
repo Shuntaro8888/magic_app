@@ -30,13 +30,11 @@ module SessionsHelper
     # ので、比較演算子の `==` ではなく代入演算子の `=` を使用
     if (user_id = session[:user_id]) # Check if the user_id is in the session
       user = User.find_by(id: user_id) # Find the user by ID from the session
-      if user && session[:session_token] == user.session_token # Check if the session token matches the user's session token
-        @current_user = user # Set the current user instance variable
-      end
+      @current_user ||= user if session[:session_token] == user.session_token # Check if the session token matches the user's session token
       # クッキーを見に行く
     elsif (user_id = cookies.encrypted[:user_id])
       user = User.find_by(id: user_id)
-      if user && user.authenticated?(cookies[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in user # Log in the user if the remember token is valid
         @current_user = user # Set the current user instance variable
       end
@@ -56,5 +54,4 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
-  
 end

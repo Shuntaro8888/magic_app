@@ -1,12 +1,12 @@
 require "test_helper"
 
-class UsersLoginTest < ActionDispatch::IntegrationTest
+class UsersLogin < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
   end
 end
 
-class InvalidPasswordTest < UsersLoginTest
+class InvalidPasswordTest < UsersLogin
   test "login path" do
     get login_path
     assert_template 'sessions/new'
@@ -24,25 +24,25 @@ class InvalidPasswordTest < UsersLoginTest
   end
 end
 
-class ValidLogin < UsersLoginTest
+class ValidLogin < UsersLogin
   def setup
-    super
+    super # @userの継承に必要
     post login_path, params: { session: { email: @user.email, password: 'password' } }
   end
 end
 
 class ValidLoginTest < ValidLogin
   test "valid login" do
-    assert is_logged_in? # Check if the user is logged in
+    assert is_logged_in?       # Check if the user is logged in
     assert_redirected_to @user # Redirect to user profile after successful login
   end
 
   test "redirect after login" do
-    follow_redirect! # Follow the redirect to the user profile page
+    follow_redirect!             # Follow the redirect to the user profile page
     assert_template 'users/show' # Ensure the user profile page is rendered
     assert_select "a[href=?]", login_path, count: 0 # No login link should be present
-    assert_select "a[href=?]", logout_path # Logout link should be present
-    assert_select "a[href=?]", user_path(@user) # User profile link should be present
+    assert_select "a[href=?]", logout_path          # Logout link should be present
+    assert_select "a[href=?]", user_path(@user)     # User profile link should be present
   end
 end
 
@@ -55,15 +55,15 @@ end
 
 class LogoutTest < Logout
   test "successful logout" do
-    assert_not is_logged_in? # Check if the user is logged out
-    assert_response :see_other # Ensure the response is a redirect
+    assert_not is_logged_in?      # Check if the user is logged out
+    assert_response :see_other    # Ensure the response is a redirect
     assert_redirected_to root_url # Redirect to the root URL after logout
   end
 
   test "redirect after logout" do
     follow_redirect!
-    assert_select "a[href=?]", login_path # Login link should be present
-    assert_select "a[href=?]", logout_path, count: 0 # Logout link should not be present
+    assert_select "a[href=?]", login_path                 # Login link should be present
+    assert_select "a[href=?]", logout_path,      count: 0 # Logout link should not be present
     assert_select "a[href=?]", user_path(@user), count: 0 # User profile link should not be present
   end
 
@@ -73,7 +73,7 @@ class LogoutTest < Logout
   end
 end
 
-class RememberingTest < UsersLoginTest
+class RememberingTest < UsersLogin
 
   test "login with remembering" do
     log_in_as(@user, remember_me: '1') # Log in with the remember me option checked
@@ -81,11 +81,8 @@ class RememberingTest < UsersLoginTest
   end
 
   test "login without remembering" do
-    # Log in with the remember me option checked
-    log_in_as(@user, remember_me: '1')
-    # Log in again without the remember me option
-    log_in_as(@user, remember_me: '0') # Log in without the remember me option
+    log_in_as(@user, remember_me: '1')     # Log in with the remember me option checked
+    log_in_as(@user, remember_me: '0')     # Log in again without the remember me option
     assert cookies[:remember_token].blank? # Ensure the remember token cookie is not set
   end
-  
 end
