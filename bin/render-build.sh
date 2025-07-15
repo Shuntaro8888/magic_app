@@ -6,8 +6,12 @@ bundle exec rails assets:precompile
 bundle exec rails assets:clean
 
 
-# renderでデプロイ失敗するので `reset` はやめて、明示的に drop → create → migrate → seed
-DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:drop
-bundle exec rails db:create
 bundle exec rails db:migrate
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:migrate:reset
 bundle exec rails db:seed
+
+# renderでデプロイ失敗するので `reset` はやめて、明示的に drop → create → migrate → seed
+# DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:drop
+# bundle exec rails db:create
+# bundle exec rails db:migrate
+# bundle exec rails db:seed
