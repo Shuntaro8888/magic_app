@@ -6,6 +6,7 @@ module SessionsHelper
     session[:session_token] = user.session_token # Store the user's session token in the session
   end
 
+  # クッキーに保存
   def remember(user)
     user.remember # Call the remember method on the user to set the remember token
     cookies.permanent.encrypted[:user_id] = user.id # Store the user ID in a permanent cookie

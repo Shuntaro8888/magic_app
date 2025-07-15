@@ -1,5 +1,5 @@
 {
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "solargraph.useBundler": true,
   "solargraph.commandPath": "bundle",
   "solargraph.diagnostics": true,
