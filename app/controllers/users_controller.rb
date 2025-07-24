@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
     # Assuming you have a User model and a corresponding view for showing user details
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def create
@@ -56,15 +57,6 @@ class UsersController < ApplicationController
     end
 
     # before フィルタ
-
-    # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?
-        store_location #application controllerでSessinHelperをincludeしてるから使える
-        flash[:danger] = "Please log in."
-        redirect_to login_url, status: :see_other # →HTTP 303
-      end
-    end
 
     # 正しいユーザーかどうか確認
     def correct_user

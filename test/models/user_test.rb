@@ -73,4 +73,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?(:remember, '') # This should return false if remember_digest is nil
   end
 
+  test "associated microposts should be destroyed" do
+    @user.save
+    @user.microposts.create!(content: "Lorem ipsum")
+    assert_difference 'Micropost.count', -1 do
+      @user.destroy
+    end
+  end
 end
