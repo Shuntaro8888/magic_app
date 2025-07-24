@@ -50,6 +50,7 @@ end
 group :production do
   gem "pg", "1.3.5" # PostgreSQLを使用する場合
   # gem "mysql2", "0.5.3" # MySQLを使用する場合
+  gem "aws-sdk-s3", "1.114.0", require: false # Active StorageでS3を使用する場合
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
