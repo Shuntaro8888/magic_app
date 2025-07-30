@@ -34,3 +34,11 @@ users = User.order(:created_at).take(6)
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.microposts.find_or_create_by(content: content) }
 end
+
+# ユーザーの一部を対象にフォロー関係を生成する
+users = User.all
+user = users.first # 最初のユーザーを基準にする
+following = users[2..50] # 最初の2人を除くユーザー
+followers = users[3..40] # 最初の3人を除くユーザー
+following.each { |followed| user.follow(followed) } # ユーザーが他のユーザーをフォロー
+followers.each { |follower| follower.follow(user) } # ユーザーがフォロワーを持つ

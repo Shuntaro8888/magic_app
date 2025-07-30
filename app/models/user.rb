@@ -1,6 +1,15 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: 'Relationship',
+                                  foreign_key: 'follower_id',
+                                  dependent: :destroy
+  has_many :passive_relationships, class_name: 'Relationship',
+                                   foreign_key: 'followed_id',
+                                   dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :activation_token, :reset_token # Virtual attribute for the remember token
+
   # Include default devise modules. Others available are:
   before_save :downcase_email
   before_create :create_activation_digest
@@ -36,6 +45,7 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil? # Return false if digest is nil
+
     BCrypt::Password.new(digest).is_password?(token)
   end
 
@@ -72,18 +82,31 @@ class User < ApplicationRecord
 
   # 試作feedの定義
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.where('user_id = ?', id)
+  end
+
+  # フォローとアンフォローのメソッド
+  def follow(other_user)
+    following << other_user unless self == other_user
+  end
+
+  def unfollow(other_user)
+    following.delete(other_user)
+  end
+
+  # フォローしているかどうかを確認するメソッド
+  def following?(other_user)
+    following.include?(other_user)
   end
 
   private
 
-    def downcase_email
-      self.email.downcase!
-    end
+  def downcase_email
+    email.downcase!
+  end
 
-    def create_activation_digest
-        self.activation_token  = User.new_token
-        self.activation_digest = User.digest(activation_token)
-    end
-
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
 end

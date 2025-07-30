@@ -34,6 +34,18 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     delete logout_path
     assert_redirected_to root_url # delete_logout_pathは最初から指定したURLを開くわけではなくdeleteメソッドlogout_pathにアクセスしdestroyアクションの中でredirectされる
   end
+
+  test "home page displays information" do
+    log_in_as(@user)
+    get root_path
+    assert_match @user.microposts.count.to_s, response.body
+    assert_select 'div.pagination', 1
+    @user.microposts.paginate(page: 1).each do |micropost|
+      assert_match micropost.content, response.body
+    end
+    assert_select 'a[href=?]', following_user_path(@user)
+    assert_select 'a[href=?]', followers_user_path(@user)
+  end
 end
 
 # This test checks that the layout links on the home page are correct.
