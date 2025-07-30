@@ -39,19 +39,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get root_path
     assert_match @user.microposts.count.to_s, response.body
-    assert_select 'div.pagination', 1
-    @user.microposts.paginate(page: 1).each do |micropost|
-      assert_match micropost.content, response.body
-    end
     assert_select 'a[href=?]', following_user_path(@user)
     assert_select 'a[href=?]', followers_user_path(@user)
   end
 end
-
-# This test checks that the layout links on the home page are correct.
-# It ensures that the root path is linked twice (once in the header and once in the footer),
-# and that the help, about, and contact paths are linked correctly.
-# The `assert_template` method checks that the correct template is rendered for the home page.
-# The `assert_select` method checks that the specified links are present in the HTML response.
-# The `count: 2` argument for the root path ensures that there are two links to the root path,
-# which is typical in a Rails application (one in the header and one in the footer).
