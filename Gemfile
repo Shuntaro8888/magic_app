@@ -60,3 +60,4 @@ gem 'mutex_m'
 gem 'bigdecimal'
 gem 'drb'
 gem 'fiddle'
+gem 'ruby_llm' # Ruby LLMを使用するためのgem

@@ -3,7 +3,12 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: :destroy
 
   def create
-    @micropost = current_user.microposts.build(micropost_params)
+    prompt = "あなたはHarry Potterが大好きなオタクです。以下の文章をHarry Potterのセリフ風に変換してください。文字数制限139文字まで。文章：#{micropost_params["content"]}"
+
+    response = Chat.create!(model_id: 'gemini-2.0-flash').ask(prompt)
+    content = response.content
+
+    @micropost = current_user.microposts.build(content: content[0..139])
     @micropost.image.attach(params[:micropost][:image])
     if @micropost.save
       flash[:success] = 'Micropost created!'
