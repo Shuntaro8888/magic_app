@@ -61,3 +61,4 @@ gem 'bigdecimal'
 gem 'drb'
 gem 'fiddle'
 gem 'ruby_llm' # Ruby LLMを使用するためのgem
+gem 'harry_potter_faker' # Harry Potterのキャラの名前を生成するためのgem

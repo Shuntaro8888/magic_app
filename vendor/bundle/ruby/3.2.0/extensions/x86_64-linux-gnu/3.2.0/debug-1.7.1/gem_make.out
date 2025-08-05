@@ -1,19 +1,19 @@
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
 /usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
 creating Makefile
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-16alft sitelibdir\=./.gem.20250624-16972-16alft clean
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-zgxjn1 sitelibdir\=./.gem.20250805-566034-zgxjn1 clean
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-16alft sitelibdir\=./.gem.20250624-16972-16alft
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-zgxjn1 sitelibdir\=./.gem.20250805-566034-zgxjn1
 compiling debug.c
 compiling iseq_collector.c
 linking shared-object debug/debug.so
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-16alft sitelibdir\=./.gem.20250624-16972-16alft install
-/usr/bin/install -c -m 0755 debug.so ./.gem.20250624-16972-16alft/debug
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-zgxjn1 sitelibdir\=./.gem.20250805-566034-zgxjn1 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250805-566034-zgxjn1/debug
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-16alft sitelibdir\=./.gem.20250624-16972-16alft clean
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-zgxjn1 sitelibdir\=./.gem.20250805-566034-zgxjn1 clean

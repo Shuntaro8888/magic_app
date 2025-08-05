@@ -1,12 +1,12 @@
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
 /usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
 Building sqlite3-ruby using packaged sqlite3.
 Extracting sqlite-autoconf-3410000.tar.gz into tmp/x86_64-linux-gnu/ports/sqlite3/3.41.0... OK
 Running 'configure' for sqlite3 3.41.0... OK
 Running 'compile' for sqlite3 3.41.0... OK
 Running 'install' for sqlite3 3.41.0... OK
-Activating sqlite3 3.41.0 (from /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ports/x86_64-linux-gnu/sqlite3/3.41.0)...
-checking for whether -L/mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ports/x86_64-linux-gnu/sqlite3/3.41.0/lib is accepted as LDFLAGS... yes
+Activating sqlite3 3.41.0 (from /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ports/x86_64-linux-gnu/sqlite3/3.41.0)...
+checking for whether -L/home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ports/x86_64-linux-gnu/sqlite3/3.41.0/lib is accepted as LDFLAGS... yes
 checking for whether -lsqlite3 is accepted as LDFLAGS... yes
 checking for whether -lm is accepted as LDFLAGS... yes
 checking for whether -fvisibility=hidden is accepted as CFLAGS... yes
@@ -25,11 +25,11 @@ checking for sqlite3_int64 in sqlite3.h... yes
 checking for sqlite3_uint64 in sqlite3.h... yes
 creating Makefile
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-z7ux71 sitelibdir\=./.gem.20250624-16972-z7ux71 clean
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-iyptn4 sitelibdir\=./.gem.20250805-566034-iyptn4 clean
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-z7ux71 sitelibdir\=./.gem.20250624-16972-z7ux71
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-iyptn4 sitelibdir\=./.gem.20250805-566034-iyptn4
 compiling aggregator.c
 compiling backup.c
 compiling database.c
@@ -38,9 +38,9 @@ compiling sqlite3.c
 compiling statement.c
 linking shared-object sqlite3/sqlite3_native.so
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-z7ux71 sitelibdir\=./.gem.20250624-16972-z7ux71 install
-/usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20250624-16972-z7ux71/sqlite3
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-iyptn4 sitelibdir\=./.gem.20250805-566034-iyptn4 install
+/usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20250805-566034-iyptn4/sqlite3
 
-current directory: /mnt/c/Users/ryota/Desktop/sample_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20250624-16972-z7ux71 sitelibdir\=./.gem.20250624-16972-z7ux71 clean
+current directory: /home/ufugf/magic_app/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.6.1/ext/sqlite3
+make DESTDIR\= sitearchdir\=./.gem.20250805-566034-iyptn4 sitelibdir\=./.gem.20250805-566034-iyptn4 clean
