@@ -1,6 +1,0 @@
-lib/builder.rb e7074b8cac8ca19c088beadf82e78068b5cf946b
-lib/builder/xchar.rb f48247a49203b1a051ffe3cae70a2cd2ef0f0216
-lib/builder/version.rb 1cacc86542764731988b2b32a280d7c527aa5049
-lib/builder/xmlbase.rb 000a3966ebb3c2fd8fc5ed8ec3549757ba698658
-lib/builder/xmlevents.rb 3832c87c64f6e719cf0fd7faf7892622d669b736
-lib/builder/xmlmarkup.rb 1b75426275b32d97449a8130209b6559e8958d36

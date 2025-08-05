@@ -1,6 +1,0 @@
-lib/date.rb 64a93eec2e2f9063f881d5fdc016ddfcbb2e2dd6
-ext/date/extconf.rb 29a0cf94b2e1ecbc5ef84a1209894b3cb022803b
-ext/date/date_core.c 1e04a042fad5acc17304675cf2053db33e223a82
-ext/date/date_parse.c 1211e3837e489e17d54e4c2d4162c213353a7453
-ext/date/date_strftime.c a375401e00d37605fd10b01f1602c087b37a478e
-ext/date/date_strptime.c 5c66592f995a3442b1852d59e8bd87e3b01a4016

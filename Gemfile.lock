@@ -162,6 +162,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    harry_potter_faker (0.0.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -436,6 +437,7 @@ DEPENDENCIES
   fiddle
   guard (= 2.18.0)
   guard-minitest (= 2.4.6)
+  harry_potter_faker
   image_processing (= 1.12.2)
   importmap-rails (= 1.1.5)
   irb (= 1.10.0)

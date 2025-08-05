@@ -7,32 +7,36 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # メインのサンプルユーザー
-User.find_or_create_by!(email: "example@railstutorial.org") do |user|
-  user.name                  = "Example User"
-  user.password              = "foobarrr"
-  user.password_confirmation = "foobarrr"
+User.find_or_create_by!(email: 'example@railstutorial.org') do |user|
+  user.name                  = 'ハリーポッター'
+  user.password              = 'foobarrr'
+  user.password_confirmation = 'foobarrr'
   user.admin                 = true
   user.activated             = true
   user.activated_at          = Time.zone.now
 end
 
 # 追加ユーザー
+Faker::Config.locale = 'ja' # Fakerのロケールを日本語に設定
 99.times do |n|
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n + 1}@railstutorial.org"
   User.find_or_create_by!(email: email) do |user|
-    user.name                  = Faker::Name.name
-    user.password              = "password"
-    user.password_confirmation = "password"
+    user.name                  = Faker::Movies::HarryPotter.character[0..49] # Harry Potterの名前を使用
+    user.password              = 'password'
+    user.password_confirmation = 'password'
     user.activated             = true
     user.activated_at          = Time.zone.now
   end
 end
 
 # ユーザーの一部を対象にマイクロポストを生成する
-users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.microposts.find_or_create_by(content: content) }
+users = User.order(:created_at).take(5)
+5.times do
+  users.each do |user|
+    content = Faker::Movies::HarryPotter.quote[0..139] # Harry Potterのセリフを生成
+    # ユーザーにマイクロポストを作成
+    user.microposts.find_or_create_by(content: content)
+  end
 end
 
 # ユーザーの一部を対象にフォロー関係を生成する

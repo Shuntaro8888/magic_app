@@ -1,9 +1,0 @@
-lib/rails-dom-testing.rb d879c178c0658ba683313679e6f40e8df4b93b5d
-lib/rails/dom/testing.rb bf68d049a3d821c154590dbd2c9dc85ce8d944bf
-lib/rails/dom/testing/railtie.rb 85fa33e1a2f3419405765099f8c1141165329695
-lib/rails/dom/testing/version.rb 763acecbcc679d9e93bc40fe5684458702abbd81
-lib/rails/dom/testing/assertions.rb 954a004bcd5e403206b64fc46f61b2ecf7d6c181
-lib/rails/dom/testing/assertions/dom_assertions.rb 5aa657f0c0fef866ed8cc00943144b423e83c198
-lib/rails/dom/testing/assertions/selector_assertions.rb bd1b124843f5ea1dca4ec8a7de2642c6e6551fe0
-lib/rails/dom/testing/assertions/selector_assertions/html_selector.rb b7499fb01adb6b2f26695d7782aefd69371786b3
-lib/rails/dom/testing/assertions/selector_assertions/substitution_context.rb aa97a89fc2349771198337217e548891362b8636

@@ -1,6 +1,0 @@
-lib/rack/test.rb de8f8f353dd8ce2bfdda7bfa762fc2195c0cc6bb
-lib/rack/test/utils.rb e2bb7b561d182a96cd0bc56ff7a608b849de929c
-lib/rack/test/methods.rb aec977481e99c332ea6b792a6c5bf4a5548d1f13
-lib/rack/test/version.rb 3b3d79f11a4fe9f8eed1e9e94c72d1fecfe3a397
-lib/rack/test/cookie_jar.rb cf80ebe0af6a8956ce5541d4bca8b7e7172fbcf2
-lib/rack/test/uploaded_file.rb e2831371d20dabe8b6c03ab54e9bdc569d7845c3
