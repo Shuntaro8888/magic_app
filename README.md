@@ -6,3 +6,5 @@ Railsチュートリアルで作成したSample_appを魔法使い系SNSに拡�
 
 ## アヴァダケタブラ！！！
 
+
+<img width="1210" height="955" alt="image" src="https://github.com/user-attachments/assets/cadcb60e-1c44-401f-b478-7f7dc24fa72f" />
