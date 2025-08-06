@@ -8,7 +8,7 @@ module UsersHelper
   end
 
   def magic_icon(user, size: 80)
-    icon_no = (user.id % 5) + 1
-    image_tag(image_path("magic/magic#{icon_no}.png"), alt: user.name, size: "#{size}x#{size}", class: 'gravatar')
+    icon_no = (user.id % 8) + 1
+    image_tag("magic/magic#{icon_no}.png", alt: user.name, size: "#{size}x#{size}", class: 'gravatar')
   end
 end

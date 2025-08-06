@@ -7,8 +7,9 @@ class MicropostsController < ApplicationController
 
     response = Chat.create!(model_id: 'gemini-2.0-flash').ask(prompt)
     content = response.content
+    revised_content = content.delete('「」"')
 
-    @micropost = current_user.microposts.build(content: content[0..139])
+    @micropost = current_user.microposts.build(content: revised_content[0..139])
     @micropost.image.attach(params[:micropost][:image])
     if @micropost.save
       flash[:success] = 'Micropost created!'
