@@ -7,9 +7,19 @@ Railsチュートリアルで作成したSample_appを魔法使い系SNSに拡�
 ## アヴァダケタブラ！！！
 
 ### フィード・投稿ページ
-<div style="border: 3px solid #666; display: inline-block;">
-  <img width="1192" height="964" alt="キャプチャ" src="https://github.com/user-attachments/assets/70e1c130-1961-40fd-9704-70a2497e6d92" style="border: 2px solid black;" />
-</div>
-### フォロワーページ
-<img width="1191" height="964" alt="3" src="https://github.com/user-attachments/assets/e13c3165-6c47-45fe-af37-af17c429e17c" />
+<table>
+<tr><td>
+  
+![キャプチャ](https://github.com/user-attachments/assets/70e1c130-1961-40fd-9704-70a2497e6d92)
 
+</td></tr>
+</table>
+
+### フォロワーページ
+<table>
+<tr><td>
+  
+![キャプチャ](https://github.com/user-attachments/assets/e13c3165-6c47-45fe-af37-af17c429e17c)
+
+</td></tr>
+</table>
